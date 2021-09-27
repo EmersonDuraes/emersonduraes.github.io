@@ -323,7 +323,6 @@ animation: mymove 5s infinite;
 /* INÍCIO BIOGRAFIA */
 
 h1{
-  border-style: double;
   background-color: #00182A;
   position: relative;
   font-size: 1.5rem;
