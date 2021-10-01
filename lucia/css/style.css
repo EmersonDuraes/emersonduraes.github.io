@@ -1416,7 +1416,7 @@ div {
 }
 h3 {
   display: block;
-  font-size: 1.5em;
+  font-size: .8rem;
   -webkit-margin-before: 0.83em;
   -webkit-margin-after: 0.83em;
   -webkit-margin-start: 0px;
@@ -1433,7 +1433,7 @@ h3 {
 
 h3 {
   display: block;
-  font-size: 1rem;
+  font-size: .8rem;
   -webkit-margin-before: 1em;
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
