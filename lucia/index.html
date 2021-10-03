@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--<link rel="shortcut icon" href="img/favicon.ico" type="image/png">-->
+      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico">
+      <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <title>Advocacia Martins e Associados</title>
+    </head>
+    <body>
+     <header>
+       <div id="menu-btn" class="fas fa-bars"></div>
+      <nav class="navbar"> 
+        <a href="#home"data-text="home">HOME</a>
+        <a href="#escritorio"data-text="escritorio">ESCRITÓRIO</a>
+        <a href="#equipe"data-text="equipe">EQUIPE</a>
+        <a href="#atuacao"data-text="atuacao">ATUAÇÃO</a>
+        <a href="#publicacoes"data-text="publicacoes">PUBLICAÇÕES</a>
+        <a href="#contato"data-text="contato">CONTATO</a>
+     </nav>
+     <!--
+    <div class="icon-bar">
+      <a href="#" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+      <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+      <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>-->
+
+
+    <div class="icon-bar">
+      <a href="#" class="facebook fa fa-facebook"></a>
+      <a href="#" class="youtube fa fa-youtube"></a>     
+      <a href="#" class="instagram fa fa-instagram"></a>
+      <a href="#" class="whatsapp fa fa-whatsapp"></a>
+      
+    
+</header>
+
+    <script>
+      document.querySelector('#menu-btn').onclick = () =>{
+        document.querySelector('#menu-btn').classList.toggle('fa-times');
+        document.querySelector('.navbar').classList.toggle('active');
+      }
+    </script> 
+
+  <div class="home" id="home">
+    <section>
+         <img src="img/plano_fundo.png" id="plano_fundo">
+         <img src="img/piso.png" id="piso">
+         <p1>ADVOCACIA <br><a2 href="https://codepen.io/grohit/">Martins e Associados</a2></p1>
+         <img src="img/elvis.png" id="elvis">
+        </section>
+ <script>
+    let btn = document.getElementById('btn')
+    let plano_fundo = document.getElementById('plano_fundo')
+    let logo = document.getElementById('logo')
+    let header = document.getElementById('header'); 
+
+    window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    plano_fundo.style.top = value * -.3 + 'px';
+    piso.style.top = value * -.25 + 'px';
+    elvis.style.top = value * -1.5 + 'px' ;
+    header.style.Top = value * -0.5 + 'px';
+    })
+ </script>
+</div>
+
+<article id="escritorio">
+  <div class="escritorio">
+    <h1>ESCRITÓRIO</h1> 
+    <div class="row1-container">
+      <div class="box box-down cyan">
+        <h2>O escritorio</h2>
+        <p>Formado por profissionais renomados, sempre tivemos uma premissa muito clara: estruturar um escritório diferente das tradicionais firmas e, com isso, oferecer uma nova e interessante alternativa de assessoria aos clientes.</p>
+      </div>
+  
+      <div class="box red">
+        <h2>Missão</h2>
+        <p>Lutar lado a lado com o cliente pela justiça.</p>
+      </div>
+  
+      <div class="box box-down blue">
+        <h2>Valores</h2>
+        <p>Profissionalismo, ética, respeito à divergências e a liberdade de expressão.<p>
+      </div>
+    </div>
+    <div class="row2-container">
+      <div class="box orange">
+        <h2>Visão</h2>
+        <p>Equipe especializada em atender toda a área jurídica e ser reconhecida pelos serviços prestados.</p>
+      </div>
+    </div>
+    
+<script></script>    
+    
+<article id="equipe">
+    <h1>EQUIPE</h1> 
+      <section class="saying_block lucia">
+        <div class="saying_content">
+          <div class="text_box">
+            <h3>ADVOGADA</h3>
+            <p> - Lucia Martins -</p>
+          </div>
+        </div>
+      </section>
+      <section class="saying_block meire">
+        <div class="saying_content">
+          <div class="text_box">
+            <h3>ADVOGADA</h3>
+            <p> - Meire Pamplona -</p>
+          </div>
+        </div>
+      </section>
+      <section class="saying_block jose">
+        <div class="saying_content">
+          <div class="text_box">
+            <h3>ADVOGADO</h3>
+            <p> - José Oliveira -</p>
+          </div>
+        </div>
+      </section>
+    </div>      
+       
+
+        
+  <article id="atuacao">
+      <h1>ATUAÇÃO</h1>
+      <div class="cols">
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img1.jpeg)">
+                <div class="inner">
+                  <p>Cívil</p>
+                  <span>01</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>O direito civil tem como finalidade regular a vida em sociedade, dando um norte do que se pode ou não fazer para que a ordem social seja mantida.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img2.jpeg)">
+                <div class="inner">
+                  <p>Tributário</p>
+                  <span>02</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Direito Tributário é a área do direito responsável por determinar e fiscalizar a arrecadação de tributos, como taxas e impostos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img3.jpeg)">
+                <div class="inner">
+                  <p>Trabalhista</p>
+                  <span>03</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p> Esse direito é composto de conjuntos de normas, princípios e outras fontes jurídicas que regem as relações de trabalho, regulamentando a condição jurídica dos trabalhadores.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img4.jpeg)">
+                <div class="inner">
+                  <p>Criminalista</p>
+                  <span>04</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>O Direito Criminal é o ramo do Direito Público que protege os bens mais importantes para sociedade. Nele, estão definidas as condutas mais graves para legislação e indicadas as penalidades aplicáveis, caso elas sejam praticadas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img5.jpeg)">
+                <div class="inner">
+                  <p>Empresarial</p>
+                  <span>05</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>O Direito Empresarial, ou Direito Comercial, é um ramo do Direito que tem como objetivo cuidar o exercício da atividade econômica organizada de fornecimento de bens ou serviços, a chamada empresa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img6.jpeg)">
+                <div class="inner">
+                  <p>Previdenciário</p>
+                  <span>06</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Direito Previdenciário é um dos ramos do direito público e tem como objetivo o estudo e a regulamentação da seguridade social.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img7.jpeg)">
+                <div class="inner">
+                  <p>Família</p>
+                  <span>07</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>Trata das relações familiares e das obrigações e direitos decorrentes dessas relações, tem como conteúdo os estudos do casamento, união estável, relações de parentesco, filiação, alimentos, bem de família, tutela, curatela e guarda.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col" ontouchstart="this.classList.toggle('hover');">
+            <div class="containerA">
+              <div class="front" style="background-image: url(img/img8.jpeg)">
+                <div class="inner">
+                  <p>Sucessório</p>
+                  <span>08</span>
+                </div>
+              </div>
+              <div class="back">
+                <div class="inner">
+                  <p>O Direito das Sucessões é o conjunto de normas que disciplinam a transferência do patrimônio de alguém, depois de sua morte, ao herdeiro, em virtude de lei ou testamento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     </article>
+  
+       <div class="galeria" id="artigos">
+          <h1>PUBLICAÇÕES</h1>  
+            <!---     
+          <video class="video" autoplay muted loop>
+            <source src="video/video-1.mp4" type="video/mp4" />
+          </video>-->
+   
+            <details>
+              <summary>DIREITOS QUE VOCÊ TEM E NÃO SABIA</summary>
+              <p>
+                Quantas vezes você já passou por algum momento de constrangimento ao fazer uma compra e se sentiu coagido pelo estabelecimento a não lutar pelos seus direitos? Saiba que, infelizmente, você não está sozinho e isso é muito comum. 
+              </p>
+              <p>
+                A sua maior defesa é sempre a informação e, por isso, separamos 15 direitos que você tem e não sabia (até agora).
+              </p>
+              
+              <b>1 - Estacionamentos não podem cobrar multa por perda de ticket</b>
+
+                <p>Em caso de perda do ticket de estacionamento, não se desespere! Antes de sair pagando pela multa cobrada, saiba se defender.
+              </p>
+              <br>
+              <b>2 - É crime ameçar o consumidor ao cobrar dívida</b>
+              <p>Não é porque você está devendo que pode ser importunado, ameaçado ou exposto ao ridículo. A cobrança do credor deve seguir algumas regras.</p>
+              <br>
+              <b>3 - Reserva de lugar em avião não pode ser cobrada</b>
+              <p>
+                Fique atento! Cobrar um preço mais alto por poltronas do tipo conforto e pela reserva antecipada de outros assentos são práticas abusivas, segundo o CDC.
+              </p>
+              <br>
+              <b>4 - Escola não pode pedir material de uso coletivo</b>
+              <p>
+                Se você tem filhos em idade escolar e está com dúvidas sobre quais materiais escolares comprar, nosso escritório te ajuda com a lista.
+              </p>
+              <br>
+              <b>5 - A garantia estendida não é obrigatória na compra de produtos</b>
+              <p>
+                Sempre que realizar uma compra, antes de pagar, observe se o valor é apenas do produto ou há cobranças extras. Fique atento e não aceite ser enrolado!
+              </p>
+              <br>
+              <b>6 - Carro danificado no estacionamento é responsabilidade do estabelecimento</b>
+              <p>
+                Se você estacionou e na volta percebeu danos no seu carro, a responsabilidade é do estabelecimento. Veja como garantir seus direitos e não fique com o prejuízo.
+              </p>
+              <br>
+              <b>7 - Você pode recuperar tudo que foi pago a mais em ICMS na sua conta de luz, nos últimos 5 anos</b>
+              <p>
+                Não aceite que uma cobrança indevida te faça pagar mais caro na conta de luz.
+              </p>
+              <br>
+              <b>8 - A operadora de TV não pode cobrar mensalidade do ponto adicional.</b>
+              <p>
+                Essa cobrança acontece porque você, na verdade, paga pelo ponto adicional, o que é proibido pela ANATEL, mas as operadoras alegam que o valor é referente ao “aluguel do equipamento habilitado” pra continuarem cobrando.
+              </p>
+              <br>
+              <b>9 - O fornecedor é obrigado a cumprir o prazo de entrega</b>
+              <p>
+                O principal motivo de reclamações que recebemos em nosso escritório é referente ao atraso na entrega dos produtos adquiridos. Conheça seus direitos com a nossa ajuda.</p>
+                <br>
+              <b>10 - Rodízio japonês: cobrança de sobras é ilegal</b>
+              <p>
+                Você foi a um rodízio em um restaurante japonês e foi cobrado por peças que sobraram e não foram consumidas? Essa prática é ilegal.
+              </p>
+              <br>
+              <b>11 - Você não é obrigado a pagar tarifa de conta corrente</b>
+              <p>
+                O consumidor não é obrigado a pagar a cesta de serviços da conta corrente. Se você não faz transações bancárias com regularidade, pode acabar jogando dinheiro fora.
+              </p>
+              <br>
+              <b>12 - Cobranças indevidas devem ser restituídas ao consumidor em dobro</b>
+              <p>
+                Nosso escritório oferece orientação aos associados quanto aos seus direitos com base no Código de Defesa do Consumidor.
+              </p>
+              <br>
+              <b>13 - A cia aérea é obrigada a substituir ou indenizar sua bagagem caso a danifique</b>
+              <p>
+                Imagine voltar de uma viagem e ver que a sua mala foi aberta e está estragada? Conheça seus direitos e saiba o que fazer caso aconteça com você!
+              </p>
+              <br>
+              <b>14 - Proibir entrada com alimentos comprados em outro local é abusivo</b>
+              <p>
+                Conheça os seus direitos e não aceite ser desrespeitado! Saiba o que fazer se for impedido de entrar em eventos ou estabelecimentos com seu lanchinho.
+              </p>
+              <br>
+              <b>15 - A operadora de telefonia não pode cobrar serviços sem avisar ao consumidor</b>
+              <p>
+                Cobranças de serviços sem prévia solicitação é prática abusiva, e o consumidor pode exigir o ressarcimento em dobro dos valores pagos. Saiba como!
+                <br>
+            </details>
+            <details>
+              <summary>ARTIGO 2</summary>
+              <p>
+                Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex.
+              </p>
+            </details>
+            <details>
+              <summary>ARTIGO 3</summary>
+              <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+            <details>
+              <summary>ARTIGO 4</summary>
+              <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+            <details>
+              <summary>ARTIGO 5</summary>
+              <p>
+                Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex.
+              </p>
+            </details>
+            <details>
+              <summary>ARTIGO 6</summary>
+              <p>
+                Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex.
+              </p>
+            </details>
+            <details>
+              <summary>ARTIGO 7</summary>
+              <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+            <details>
+              <summary>ARTIGO 8</summary>
+              <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+    </div>
+                  
+        <div class="wrappers"></div>
+          <h1>CONTATO</h1>
+        <div class="contato" id="contato">
+          <form action="#">
+            <div class="row">
+              <div class="col-25">
+                <label for="fname">Seu nome</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="nome" name="nome" placeholder="Seu nome">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="email">e-mail</label>
+              </div>
+              <div class="col-75">
+                <input type="text" id="email" name="email" placeholder="Seu e-mail">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="assunto">Assunto</label>
+              </div>
+              <div class="col-75">
+                <select id="assunto" name="assunto">
+                  <option value="sugestoes">Sugestões</option>
+                  <option value="duvidas">Dúvidas</option>
+                  <option value="outros">Outros</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-25">
+                <label for="enviar">Enviar</label>
+              </div>
+              <div class="col-75">
+                <textarea id="enviar" name="enviar" placeholder="Sua mensagem" style="height:200px"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Enviar">
+            </div>
+          </form>
+        </div>
+
+        <a href="#home" class="voltar-ao-topo">^</a>
+
+        <script>
+          $(document).ready(function () {
+          $(".back-to-top").css("display", "none");
+          $("body").scroll(function() {
+          if($(this).scrollTop() == 0){
+          $(".back-to-top").css("display", "none");
+          } else {
+          $(".back-to-top").css("display", "block");
+          }
+          });
+          $(".back-to-top").click(function() {
+          $("html, body").animate({scrollTop: 0}, 800);
+         });
+       });
+        </script>
+
+        <footer>
+          <div class="footer" id="footer">
+      <h4>
+        <div class="footer-social" id="footer-social"></div>
+        <a href="#" class="whatsapp1"><i class="fa fa-whatsapp"></i></a>
+        <a href="#" class="facebook1"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram1"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="youtube1"><i class="fa fa-youtube"></i></a>
+        <h3><p>© Advocacia Martins - Todos os direitos reservados.</p></h3>
+      </h4>
+    </hr>
+          </div>
+    </footer>
+    <script src="js./app.js"></script>
+
+
+  </body>
+</html>
