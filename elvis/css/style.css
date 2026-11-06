@@ -882,3 +882,35 @@ padding: 20px;
   border-radius: 0;
   margin:0 1em 0 0;
 }
+
+.whatsapp1 {
+  background: #000000;
+  color: white;
+  border-radius: 0;
+  margin: 0 1em 0 0;
+}
+
+
+
+/* BOTÃO TOPO */
+
+.voltar-ao-topo {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
+  color: #FFF;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 35px;
+  padding: 0px 10px 40px 10px;
+  position: fixed;
+  bottom: 15px;
+  right: 47%;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 999;
+}
+.voltar-ao-topo:hover {
+  background-color: rgb(254, 140, 0);
+  color: rgb(0, 0, 0);
+}
