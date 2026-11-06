@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -14,14 +14,14 @@
     <body>
   
      <header>
-       <div id="menu-btn" class="fas fa-bars"></div>
+       <div id="menu-btn" class="fas fa-bars" role="button" tabindex="0" aria-label="Abrir menu"></div>
       <nav class="navbar"> 
-        <a href="#home"data-text="home">HOME</a>
-        <a href="#artista"data-text="artista">ARTISTA</a>
-        <a href="#musica"data-text="música">MÚSICA</a>
-        <a href="#video"data-text="vídeo">VÍDEO</a>
-        <a href="#webcam"data-text="webcam">LIVE</a>
-        <a href="#contato"data-text="contato">CONTATO</a>
+        <a href="#home" data-text="home">HOME</a>
+        <a href="#artista" data-text="artista">ARTISTA</a>
+        <a href="#musica" data-text="música">MÚSICA</a>
+        <a href="#video" data-text="vídeo">VÍDEO</a>
+        <a href="#webcam" data-text="webcam">LIVE</a>
+        <a href="#contato" data-text="contato">CONTATO</a>
      </nav>
    
     <div class="icon-bar">
@@ -32,49 +32,62 @@
     </div>
 </header>
     <script>
-      document.querySelector('#menu-btn').onclick = () =>{
-        document.querySelector('#menu-btn').classList.toggle('fa-times');
-        document.querySelector('.navbar').classList.toggle('active');
+      const menuBtn = document.querySelector('#menu-btn');
+      const navbar = document.querySelector('.navbar');
+      function toggleMenu(force){
+        const open = typeof force === 'boolean' ? force : !navbar.classList.contains('active');
+        navbar.classList.toggle('active', open);
+        menuBtn.classList.toggle('fa-times', open);
+        menuBtn.classList.toggle('fa-bars', !open);
+        menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
       }
-    </script>  
+      menuBtn.onclick = () => toggleMenu();
+      menuBtn.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); } };
+      /* fecha o menu ao escolher uma seção */
+      document.querySelectorAll('.navbar a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+    </script>
    <div class="home" id="home">
        <section>
-            <img class= "vinil" src="img/vinil.png" id="vinil">
-            <img src="img/plano_fundo.png" id="plano_fundo">
-            <img src="img/elvis.png" id="elvis">
-            <img src="img/logo.png" id="logo">
-            <img src="img/notas.png" id="notas">
-            <img src="img/microfone.png" id="microfone">
+            <img class="vinil" src="img/vinil.png" id="vinil" alt="">
+            <img src="img/plano_fundo.png" id="plano_fundo" alt="">
+            <img src="img/elvis.png" id="elvis" alt="Elvis Presley dançando">
+            <img src="img/logo.png" id="logo" alt="">
+            <img src="img/notas.png" id="notas" alt="">
+            <img src="img/microfone.png" id="microfone" alt="">
         </section>
      
     <script>
-       let btn = document.getElementById('btn')
-       let plano_fundo = document.getElementById('plano_fundo')
-       let notas = document.getElementById('notas')
-       let elvis = document.getElementById('elvis')
-       let logo = document.getElementById('logo')
-       let vinil = document.getElementById('vinil')
-       let header = document.getElementById('header'); 
-       let microfone = document.getElementById('microfone')
-
-       window.addEventListener('scroll', function(){
-       let value = window.scrollY;
-       microfone.style.top = value * -6 + 'px';
-       vinil.style.top = value * -2.5 + 'px';
-       plano_fundo.style.top = value * -.3 + 'px';
-       notas.style.top = value * -5 + 'px';
-       elvis.style.marginLeft = value * -1.5 + 'px' ;
-       logo.style.top = value * -2.5 + 'px' ;
-       header.style.Top = value * -0.5 + 'px';
-       })
+       /* Parallax do topo: o script só informa a rolagem (--s); o CSS move cada camada. */
+       (function(){
+         const hero = document.querySelector('.home section');
+         let ticking = false;
+         function update(){
+           hero.style.setProperty('--s', Math.min(window.scrollY, window.innerHeight * 2));
+           ticking = false;
+         }
+         window.addEventListener('scroll', function(){
+           if (!ticking) { ticking = true; requestAnimationFrame(update); }
+         }, { passive: true });
+         update();
+       })();
     </script>
 </div>
 
+  <script>
+    /* Em telas de toque (sem mouse) o card vira ao tocar. Com mouse, vale o :hover do CSS. */
+    document.addEventListener('DOMContentLoaded', function(){
+      if (window.matchMedia('(hover: none)').matches) {
+        document.querySelectorAll('.cols .col').forEach(function(c){
+          c.addEventListener('click', function(){ c.classList.toggle('hover'); });
+        });
+      }
+    });
+  </script>
   <article id="artista">
     <div class="wrapper">
       <h1>BIOGRAFIA</h1>
       <div class="cols">
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img1.jpeg)">
                 <div class="inner">
@@ -89,7 +102,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img2.jpeg)">
                 <div class="inner">
@@ -104,7 +117,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img3.jpeg)">
                 <div class="inner">
@@ -120,7 +133,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img4.jpeg)">
                 <div class="inner">
@@ -136,7 +149,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img5.jpeg)">
                 <div class="inner">
@@ -152,7 +165,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img6.jpeg)">
                 <div class="inner">
@@ -168,7 +181,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img7.jpeg)">
                 <div class="inner">
@@ -185,7 +198,7 @@
               </div>
             </div>
           </div>
-          <div class="col" ontouchstart="this.classList.toggle('hover');">
+          <div class="col">
             <div class="containerA">
               <div class="front" style="background-image: url(img/img8.jpeg)">
                 <div class="inner">
@@ -220,7 +233,7 @@
                         <span class="card__status">Sylvia</span>
                       </div>
                     </div>
-                    <center><audio controls>
+                    <center><audio controls preload="none">
                       <source src="musicas/sylvia.mp3" type="audio/mpeg">
                       <source src="musicas/sylvia.ogg" type="audio/ogg">
                       Seu navegador não suporta áudio tag.
@@ -239,7 +252,7 @@
                         <span class="card__status">kiss Me Quick</span>
                       </div>
                     </div>             
-                    <center><audio controls>
+                    <center><audio controls preload="none">
                       <source src="musicas/kiss_me_quick.mp3" type="audio/mpeg">
                       <source src="musicas/kiss_me_quick.ogg" type="audio/ogg">
                       Seu navegador não suporta áudio tag.
@@ -258,7 +271,7 @@
                         <span class="card__status">Sweet Caroline</span>
                       </div>
                     </div>
-                  <center><audio controls>
+                  <center><audio controls preload="none">
                       <source src="musicas/sweet_caroline.mp3" type="audio/mpeg">
                       <source src="musicas/sweet_caroline.ogg" type="audio/ogg">
                       Seu navegador não suporta áudio tag.
@@ -274,29 +287,34 @@
         <div class="wrapper">
           <h1>VÍDEOS</h1>         
               <div class="video-galeria">
-              <div class="video"><video src="video/video-1.mp4" muted></video></div>
-              <div class="video"><video src="video/video-2.mp4" muted></video></div>
-              <div class="video"><video src="video/video-5.mp4" muted></video></div>
-              <div class="video"><video src="video/video-2.mp4" muted></video></div>
-              <div class="video"><video src="video/video-5.mp4" muted></video></div>
-              <div class="video"><video src="video/video-1.mp4" muted></video></div>
+              <div class="video"><video src="video/video-1.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="video"><video src="video/video-2.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="video"><video src="video/video-5.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="video"><video src="video/video-2.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="video"><video src="video/video-5.mp4" muted playsinline preload="metadata"></video></div>
+              <div class="video"><video src="video/video-1.mp4" muted playsinline preload="metadata"></video></div>
         </div>
    
         <div class="popup-video">
         <span>&times;</span>
-        <video src="video/capa.mp4" muted autoplay controls></video>
+        <video src="video/capa.mp4" muted playsinline controls></video>
         </div> 
       </div>
         <script>
           document.querySelectorAll('.video-galeria video'). forEach(vid =>{
           vid.onclick = () =>{   
-          document.querySelector('.popup-video').style.display = 'block';
-          document.querySelector('.popup-video video').src = vid.getAttribute('src'); 
+          const popup = document.querySelector('.popup-video');
+          const player = popup.querySelector('video');
+          popup.style.display = 'block';
+          player.src = vid.getAttribute('src');
+          player.play().catch(() => {});
         } 
         });
 
           document.querySelector('.popup-video span').onclick = () =>{
-          document.querySelector('.popup-video').style.display = 'none';
+          const popup = document.querySelector('.popup-video');
+          popup.querySelector('video').pause();
+          popup.style.display = 'none';
         }
         </script>
         </div>        
@@ -305,21 +323,10 @@
 
         <h1>GRACELAND LIVE</h1>  
          <div class="graceland" id="webcam">
-            <iframe id="ls_embed_1630355714" src="https://vimeo.com/event/4768062/embed?background=1" width="960" height="540" frameborder="0" scrolling="no" allowfullscreen> </iframe>
+            <iframe id="ls_embed_1630355714" src="https://vimeo.com/event/4768062/embed?background=1" width="960" height="540" frameborder="0" scrolling="no" allowfullscreen title="Graceland Live"></iframe>
          </div>
 
-        <script>
-           document.querySelectorAll('.webcam-graceland webcam'). forEach(vid =>{
-           vid.onclick = () =>{   
-           document.querySelector('.popup-webcam').style.display = 'block';
-           document.querySelector('.popup-webcam webcam').src = vid.getAttribute('src'); 
-           } 
-           });
-      
-           document.querySelector('.popup-webcam span').onclick = () =>{
-           document.querySelector('.popup-webcam').style.display = 'none';
-           }
-        </script>         
+         
         <div class="wrappers"></div>
           <h1>CONTATO</h1>
         <div class="contato" id="contato">
@@ -366,23 +373,9 @@
           </form>
         </div>
 
-        <a href="#home" class="voltar-ao-topo">^</a>
+        <a href="#home" class="voltar-ao-topo" aria-label="Voltar ao topo">^</a>
 
-        <script>
-          $(document).ready(function () {
-          $(".back-to-top").css("display", "none");
-          $("body").scroll(function() {
-          if($(this).scrollTop() == 0){
-          $(".back-to-top").css("display", "none");
-          } else {
-          $(".back-to-top").css("display", "block");
-          }
-          });
-          $(".back-to-top").click(function() {
-          $("html, body").animate({scrollTop: 0}, 800);
-         });
-       });
-        </script>
+
 
         <footer>
           <div class="footer" id="footer">
@@ -399,3 +392,4 @@
     </footer>
   </body>
 </html>
+
