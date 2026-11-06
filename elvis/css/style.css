@@ -169,7 +169,18 @@ z-index: 10000;
 }
 
 /* --s = distância rolada (px), definida pelo script em index.html */
-#vinil     { margin-top: -90px; z-index: -100; transform: translate3d(0, calc(var(--s, 0) * -2.5px), 0); }
+/* O disco usa as propriedades 'translate' (parallax) e 'rotate' (giro) para
+   o giro acontecer no centro do disco, sem sair da posição. */
+#vinil     { margin-top: -90px; z-index: -100; translate: 0 calc(var(--s, 0) * -2.5px);
+             transform-origin: 50% 50%; transition: translate 3s ease;
+             animation: vitrola 5s linear infinite; }
+
+@keyframes vitrola { to { rotate: 360deg; } }
+
+@media (prefers-reduced-motion: reduce)
+{
+  #vinil { animation: none; }
+}
 #plano_fundo { z-index: -20; transform: translate3d(0, calc(50px + var(--s, 0) * -.3px), 0); }
 #notas     { top: 10%; bottom: auto; z-index: -20; transform: translate3d(0, calc(5px + var(--s, 0) * -5px), 0); }
 #elvis     { top: 350px; bottom: auto; z-index: 10; transform: translate3d(calc(var(--s, 0) * -1.5px), -310px, 0); }
@@ -202,7 +213,10 @@ z-index: 10000;
     transition: transform .6s ease-out;
   }
 
-  #vinil       { transform: translate3d(0, calc(var(--s, 0) * -.6px), 0); }
+  #elvis, #notas, #microfone { top: auto; bottom: 0; }
+
+  /* disco deslocado para ficar atrás do Elvis */
+  #vinil       { translate: calc(var(--stage-w) * -.27) calc(var(--s, 0) * -.6px); transition: translate .6s ease-out; }
   #plano_fundo { transform: translate3d(0, calc(var(--s, 0) * -.2px), 0); }
   #notas       { transform: translate3d(0, calc(var(--s, 0) * -.8px), 0); }
   #elvis       { transform: translate3d(calc(var(--s, 0) * -.5px), 0, 0); }
@@ -867,36 +881,4 @@ padding: 20px;
   color: white;
   border-radius: 0;
   margin:0 1em 0 0;
-}
-
-.whatsapp1 {
-  background: #000000;
-  color: white;
-  border-radius: 0;
-  margin: 0 1em 0 0;
-}
-
-
-
-/* BOTÃO TOPO */
-
-.voltar-ao-topo {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 25px;
-  color: #FFF;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  height: 35px;
-  padding: 0px 10px 40px 10px;
-  position: fixed;
-  bottom: 15px;
-  right: 47%;
-  text-align: center;
-  margin: 0 auto;
-  z-index: 999;
-}
-.voltar-ao-topo:hover {
-  background-color: rgb(254, 140, 0);
-  color: rgb(0, 0, 0);
 }
