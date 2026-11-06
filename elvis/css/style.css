@@ -185,7 +185,14 @@ z-index: 10000;
 #notas     { top: 10%; bottom: auto; z-index: -20; transform: translate3d(0, calc(5px + var(--s, 0) * -5px), 0); }
 #elvis     { top: 350px; bottom: auto; z-index: 10; transform: translate3d(calc(var(--s, 0) * -1.5px), -310px, 0); }
 #logo      { transform: translate3d(0, calc(-25px + var(--s, 0) * -2.5px), 0); }
-#microfone { top: 0; bottom: auto; transform: translate3d(0, calc(var(--s, 0) * -6px + (1 - min(var(--s, 0), 1)) * var(--hero-h)), 0); }
+/* microfone: sobe de baixo ao abrir o site e fica suspenso no topo, sobre o disco */
+#microfone { top: 0; bottom: auto; transition: none; animation: microfone-sobe 2.6s cubic-bezier(.2,.7,.2,1) .4s both; }
+
+@keyframes microfone-sobe
+{
+  from { transform: translate3d(0, var(--hero-h), 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
 
 /* ---- CELULAR / TABLET / TELAS EM PÉ ----
    A cena é uma arte 16:9. No celular ela é dimensionada pela ALTURA
@@ -220,7 +227,7 @@ z-index: 10000;
   #plano_fundo { transform: translate3d(0, calc(var(--stage-w) * .0366 + var(--s, 0) * -.2px), 0); }
   #notas       { transform: translate3d(0, calc(var(--stage-w) * .05625 + var(--s, 0) * -.8px), 0); }
   #elvis       { transform: translate3d(calc(var(--s, 0) * -.5px), calc(var(--stage-w) * .028), 0); }
-  #microfone   { transform: translate3d(0, calc(var(--s, 0) * -3px + (1 - min(var(--s, 0), 1)) * var(--hero-h)), 0); }
+
 
   /* assinatura "design Emerson Durães": ampliada e encostada no canto direito */
   #logo
