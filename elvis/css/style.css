@@ -204,6 +204,8 @@ z-index: 10000;
   {
     --stage-w: max(100vw, min(190vw, calc(var(--hero-h) * 1.335)));
     --focus: .335;
+    --mic-lift: 80px;   /* sobe o microfone até encostar no topo (= espaço reservado acima da cena) */
+    --disc-lift: 240px; /* quanto o disco sobe: maior = mais disco cortado pelo topo */
     /* o topo tem só a altura da cena (+ espaço do botão de menu): disco e microfone ficam no topo da tela */
     height: calc(var(--stage-w) * .5625 + 80px);
     overflow: hidden;
@@ -223,8 +225,17 @@ z-index: 10000;
 
   #elvis, #notas, #microfone { top: auto; bottom: 0; }
 
+  @keyframes microfone-sobe-celular
+  {
+    from { transform: translate3d(0, var(--hero-h), 0); }
+    to   { transform: translate3d(0, calc(var(--mic-lift) * -1), 0); }
+  }
+
   /* mesmas proporções do original (deslocamentos em % da altura da cena) */
-  #vinil       { translate: 0 calc(var(--s, 0) * -.6px); transition: translate .6s ease-out; }
+  /* No celular o microfone fica colado no topo da tela e o disco sobe, com cerca de
+     metade cortada pela borda de cima. Ajuste --mic-lift e --disc-lift para subir/descer. */
+  #vinil       { translate: 0 calc(var(--s, 0) * -.6px - var(--disc-lift)); transition: translate .6s ease-out; }
+  #microfone   { animation-name: microfone-sobe-celular; }
   #plano_fundo { transform: translate3d(0, calc(var(--stage-w) * .0366 + var(--s, 0) * -.2px), 0); }
   #notas       { transform: translate3d(0, calc(var(--stage-w) * .05625 + var(--s, 0) * -.8px), 0); }
   #elvis       { transform: translate3d(calc(var(--s, 0) * -.5px), calc(var(--stage-w) * .028), 0); }
@@ -932,4 +943,3 @@ padding: 20px;
 {
   #artista, .wrapper { margin-top: 40px; }
 }
-
