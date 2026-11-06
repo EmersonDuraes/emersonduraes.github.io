@@ -204,7 +204,8 @@ z-index: 10000;
   {
     --stage-w: max(100vw, min(190vw, calc(var(--hero-h) * 1.335)));
     --focus: .335;
-    min-height: calc(var(--stage-w) * .5625);
+    /* o topo tem só a altura da cena (+ espaço do botão de menu): disco e microfone ficam no topo da tela */
+    height: calc(var(--stage-w) * .5625 + 80px);
     overflow: hidden;
     background-size: cover;
   }
@@ -921,3 +922,14 @@ padding: 20px;
   background-color: rgb(254, 140, 0);
   color: rgb(0, 0, 0);
 }
+
+  
+
+
+
+/* celular: aproxima as seções do topo (o espaço de 130px ficava vazio) */
+@media (max-width: 900px), (max-aspect-ratio: 1/1)
+{
+  #artista, .wrapper { margin-top: 40px; }
+}
+
